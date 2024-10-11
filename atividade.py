@@ -40,3 +40,23 @@ lista_alunos = session.query(Aluno).all()
 
 for aluno in lista_alunos:
     print(f"{aluno.id} - {aluno.nome} - {aluno.email} - {aluno.idade} - {aluno.ra}")
+
+# Deletando um usuário
+print("\nExcluindo usuário no banco de dados.")
+email_aluno = input("Informe o email do aluno: ")
+aluno - session.query(Aluno).filter_by(email = email_aluno).first()
+session.delete(Aluno)
+session.commit()
+print("\nEmail apagado com sucesso!")
+
+# Atualizar um usuário
+print("\nAtualizando os dados de um usuário: ")
+
+email_aluno = input("Informe o email do aluno: ")
+
+aluno - session.query(Aluno).filter_by(email = email_aluno).first()
+
+print(f"{aluno.id} - {aluno.nome} - {aluno.email}")
+
+# Fechando conexão
+session.close()
